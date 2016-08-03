@@ -1,10 +1,9 @@
 var express = require("express");
 var app = express();
-var mixes = require("./data/mixes.js");
+mixes = require("./data/mixes.js");
+console.log(mixes);
 app.set("view engine", "hbs");
 app.use(express.static("public"))
-
-
 
 ////////////////////////////////////////////////////////////
 ///////////EMERGENCY COMPLIMENTS////////////////////////////
@@ -44,20 +43,17 @@ function shuffle(array){
 
 
 //create div functions
-function makedivs(array){
-  for (var i = 0; i < array.length; i++){
 
-    $blockFeed.append(item);
-  }
-}
 
 
 app.get("/", function(req, res){
   res.render("index", {
-    compliment: shuffle(compliments),
-    color: shuffle(colors2),
-    colorbg: shuffle(colors)
-    //mixes:mixes call function here to make divs!
+    // compliment: shuffle(compliments),
+    // color: shuffle(colors2),
+    // colorbg: shuffle(colors),
+    mixes:mixes
+    // res.send("<div class='mixes'> insertimage </div>")
+
   })
 });
 
