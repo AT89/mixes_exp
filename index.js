@@ -6,24 +6,22 @@ app.use(express.static("public"))
 
 
 
-
-
-
+////////////////////////////////////////////////////////////
+///////////EMERGENCY COMPLIMENTS////////////////////////////
+////////////////////////////////////////////////////////////
 var colors2 = ["#FFFFFF"];
 var colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"];
 
 var compliments = [
   "Your instructors love you",
   "High five = ^5",
-  "Is it Ruby Tuesday yet?",
   "It's almost beer o'clock",
   "The Force is strong with you",
-  "you are a beautiful person"
+  "you are a beautiful person",
+  "You are a Pokemon master",
+  "You are #1 Genji NA",
+  "Jet Fuel can't melt steel beams"
 ];
-
-
-
-//create div functions
 
 
 function shuffle(array){
@@ -40,7 +38,18 @@ function shuffle(array){
     return array[0];
 }
 
+/////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
 
+
+//create div functions
+function makedivs(array){
+  for (var i = 0; i < array.length; i++){
+
+    $blockFeed.append(item);
+  }
+}
 
 
 app.get("/", function(req, res){
@@ -48,7 +57,7 @@ app.get("/", function(req, res){
     compliment: shuffle(compliments),
     color: shuffle(colors2),
     colorbg: shuffle(colors)
-    //mixes:mixes create something here for all the information
+    //mixes:mixes call function here to make divs!
   })
 });
 
