@@ -9,7 +9,7 @@ app.use(express.static("public"))
 
 
 
-
+var colors2 = ["#FFFFFF"];
 var colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"];
 
 var compliments = [
@@ -46,7 +46,7 @@ function shuffle(array){
 app.get("/", function(req, res){
   res.render("index", {
     compliment: shuffle(compliments),
-    color: shuffle(colors),
+    color: shuffle(colors2),
     colorbg: shuffle(colors)
     //mixes:mixes create something here for all the information
   })
