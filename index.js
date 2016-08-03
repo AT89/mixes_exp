@@ -1,7 +1,16 @@
 var express = require("express");
 var app = express();
-app.set("view engine", "hbs")
+var mixes = require("./data/mixes.js");
+app.set("view engine", "hbs");
 app.use(express.static("public"))
+
+
+
+
+
+
+
+var colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"];
 
 var compliments = [
   "Your instructors love you",
@@ -13,10 +22,9 @@ var compliments = [
 ];
 
 
-var colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"];
 
-//Fisher-Yates random
-// Array.protoype.
+//create div functions
+
 
 function shuffle(array){
     var m = array.length, t, i;
@@ -34,17 +42,16 @@ function shuffle(array){
 
 
 
+
 app.get("/", function(req, res){
   res.render("index", {
     compliment: shuffle(compliments),
     color: shuffle(colors),
     colorbg: shuffle(colors)
+    //mixes:mixes create something here for all the information
   })
 });
 
-app.get("/:name", function(req, res){
-  res.send("hello " + req.params.name);
-})
 
 app.listen(1337, function(){
   console.log("app listening on port 1337 skeet skeet");
