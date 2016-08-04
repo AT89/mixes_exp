@@ -1,9 +1,9 @@
 var express = require("express");
 var app = express();
 mixes = require("./data/mixes.js");
-console.log(mixes);
 app.set("view engine", "hbs");
-app.use(express.static("public"))
+app.use(express.static("public"));
+
 
 ////////////////////////////////////////////////////////////
 ///////////EMERGENCY COMPLIMENTS////////////////////////////
@@ -40,18 +40,25 @@ function shuffle(array){
 /////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
 /////////////////////////////////////////////////////
-
+// for (i=0; i< mixes.length; i++){
 
 //create div functions
+function makemixes(mixes){
+  console.log("makemixesfunc");
 
+// //
+// //     console.log("mixes[i].image")
 
+      // '<div><img src=' + mixes[0].image + '</img></div>'
+return mixes[0].image
+}
 
 app.get("/", function(req, res){
   res.render("index", {
-    // compliment: shuffle(compliments),
-    // color: shuffle(colors2),
-    // colorbg: shuffle(colors),
-    mixes:mixes
+    compliment: shuffle(compliments),
+    color: shuffle(colors2),
+    colorbg: shuffle(colors),
+    mixfeed: makemixes(mixes)
     // res.send("<div class='mixes'> insertimage </div>")
 
   })

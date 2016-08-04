@@ -1,23 +1,23 @@
 // mixes = require("./data/mixes.js");
 
-window.onload = function(){
-
-
-makemixes()}
-
-
-function makemixes(mixes){
-  console.log("makemixesfunc");
-// for (i=0; i< mixes.length; i++){
+// window.onload = function(){
 //
-//     console.log("mixes[i].image")
-//     $('.mix-list').append(
-//       '<div>' + mixes[i].image + '</div>'
+//
+// makemixes()}
 
-  //   )
-  //
-  // }
-}
+
+// function makemixes(mixes){
+//   console.log("makemixesfunc");
+// // for (i=0; i< mixes.length; i++){
+// // //
+// // //     console.log("mixes[i].image")
+//     $('.mixfeed').append(
+//       // '<div><img src=' + mixes[0].image + '</img></div>'
+// mixes[0].image
+    // )
+
+// }
+
 
 
 // insertimage = '<img src="' + mixes[i].image + '" />';
