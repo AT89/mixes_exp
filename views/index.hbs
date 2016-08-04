@@ -1,10 +1,21 @@
-<div id="bg" style="background-color:{{colorbg}}">
-  <div id= "comp" style="color:{{color}}">{{compliment}}</div>
+<!-- <div id="bg" style="background-color:{{colorbg}}">
+  <div id= "comp" style="color:{{color}}">{{compliment}}</div> -->
+<script src="/scripts/jquery.min.js"></script>
 
 
 
-
-  <div id= "itembox">
-    <img src="{{mixfeed}}"/>
+  <div id= "mixfeed">
+    <img src='{{mixfeed}}' />
   </div>
+
+<div id="musicfeed">
+
 </div>
+
+
+<script>
+
+  for (i = 0; i < {{mixfeed.length}}; i++){
+      $("#musicfeed").append("<div class='itemss'> <img class='coverart' src='mixfeed[i].image'/></div>");
+  }
+</script>

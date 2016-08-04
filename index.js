@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-mixes = require("./data/mixes.js");
+var mixes = require("./data/mixes.js");
 app.set("view engine", "hbs");
 app.use(express.static("public"));
 
@@ -40,30 +40,38 @@ function shuffle(array){
 /////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
 /////////////////////////////////////////////////////
-// for (i=0; i< mixes.length; i++){
+
 
 //create div functions
-function makemixes(mixes){
-  console.log("makemixesfunc");
+function getImages(mixes){
+  console.log("getimagesfunc");
+for (i=0; i< mixes.length; i++){
 
-// //
-// //     console.log("mixes[i].image")
+return (mixes[i].image);
 
-      // '<div><img src=' + mixes[0].image + '</img></div>'
-return mixes[0].image
+
 }
+}
+// makemixes();
+//use pictures array
 
 app.get("/", function(req, res){
   res.render("index", {
-    compliment: shuffle(compliments),
-    color: shuffle(colors2),
-    colorbg: shuffle(colors),
-    mixfeed: makemixes(mixes)
+    // compliment: shuffle(compliments),
+    // color: shuffle(colors2),
+    // colorbg: shuffle(colors),
+    mixfeed: getImages(mixes)
     // res.send("<div class='mixes'> insertimage </div>")
 
   })
 });
 
+
+//api.route that sends up the data to json
+//root.route to send up files
+
+//render one index html file, sends up the links(data) to angular
+//angular takes over and queries the api to display
 
 app.listen(1337, function(){
   console.log("app listening on port 1337 skeet skeet");
